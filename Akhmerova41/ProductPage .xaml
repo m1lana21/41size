@@ -9,6 +9,52 @@
       Title="ProductPage" FontFamily="Comic Sans MS">
 
     <Grid>
-        <Button x:Name="ButtonGo" Content="Go!" Click="ButtonGo_Click"></Button>
+        <ListView Name="ProductListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+            <Image Width="100" Grid.Column="0" Stretch="UniformToFill" Grid.RowSpan="4">
+                <Image.Source>
+                    <Binding Path="ProductPhoto">
+                        <Binding.TargetNullValue>
+                            <ImageSource>
+                                products\picture.png
+                            </ImageSource>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>
+            </Image>
+            <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0"></TextBlock>
+            <TextBlock Text="{Binding ProductProductDescription}" Grid.Column="1" Grid.Row="1"></TextBlock>
+            <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2"></TextBlock>
+            
+            <StackPanel Grid.Column="1" Grid.Row="3">
+                <TextBlock Text="{Binding ProductCost}"></TextBlock>
+                <TextBlock Text=" рублей"></TextBlock>
+            </StackPanel>
+                <TextBlock  Grid.Column="2" Grid.Row="0" Text="Скидка"></TextBlock>
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock Grid.Row="2" Grid.RowSpan="3" Text="{Binding ProductDiscountAmount}" FontSize="50"></TextBlock>
+                <TextBlock Grid.Row="2" Grid.RowSpan="3" Text="%" FontSize="50"></TextBlock>
+            </StackPanel>
+            
+            
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView> 
+        
     </Grid>
 </Page>

@@ -23,6 +23,8 @@ namespace Akhmerova41
         public ProductPage()
         {
             InitializeComponent();
+            var currentProducts = Akhmerova41Entities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currentProducts;
         }
 
         private void ButtonGo_Click(object sender, RoutedEventArgs e)

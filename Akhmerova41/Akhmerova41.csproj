@@ -169,19 +169,22 @@
     <Resource Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="products\B320R5.jpg" />
-    <Resource Include="products\D329H3.jpg" />
-    <Resource Include="products\D572U8.jpg" />
-    <Resource Include="products\F572H7.jpg" />
-    <Resource Include="products\F635R4.jpg" />
-    <Resource Include="products\G432E4.jpg" />
-    <Resource Include="products\G783F5.jpg" />
-    <Resource Include="products\H782T5.jpg" />
-    <Resource Include="products\J384T6.jpg" />
-    <Resource Include="products\А112Т4.jpg" />
+    <Resource Include="product\B320R5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="product\1573393910581.jpg" />
+    <Content Include="product\D329H3.png" />
+    <Content Include="product\D572U8.png" />
+    <Content Include="product\F572H7.png" />
+    <Content Include="product\F635R4.png" />
+    <Content Include="product\G432E4.png" />
+    <Content Include="product\G783F5.png" />
+    <Content Include="product\H782T5.png" />
+    <Content Include="product\J384T6.png" />
+    <Content Include="product\A112T4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="products\picture.png" />
+    <Resource Include="product\picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AkhmerovaModel.Context.tt">

@@ -8,6 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/d329h3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/d572u8.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/f572h7.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/f635r4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/g432e4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/g783f5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/h782t5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/j384t6.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product/a112t4.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("akhmerovamodel.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("akhmerovamodel.tt")]
 

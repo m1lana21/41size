@@ -25,3 +25,30 @@ D:\3 Курс\ИСП-31\Ахмерова\project\Akhmerova41\bin\Debug\EntityFra
 D:\3 Курс\ИСП-31\Ахмерова\project\Akhmerova41\bin\Debug\ru\EntityFramework.resources.dll
 D:\3 Курс\ИСП-31\Ахмерова\project\Akhmerova41\obj\Debug\Akhmerova41_Content.g.cs
 D:\3 Курс\ИСП-31\Ахмерова\project\Akhmerova41\obj\Debug\Akhmerova41.csproj.CopyComplete
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\Akhmerova41.exe.config
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\Akhmerova41.exe
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\Akhmerova41.pdb
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\EntityFramework.dll
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\EntityFramework.SqlServer.dll
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\EntityFramework.xml
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\EntityFramework.SqlServer.xml
+D:\ucheba\РПМ\Проект 3\Akhmerova41\bin\Debug\ru\EntityFramework.resources.dll
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.csproj.AssemblyReference.cache
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\AddEditPage.g.cs
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\MainWindow.g.cs
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\ProductPage .g.cs
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\App.g.cs
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41_Content.g.cs
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41_MarkupCompile.cache
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41_MarkupCompile.lref
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\App.baml
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\AddEditPage.baml
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\MainWindow.baml
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\ProductPage .baml
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.g.resources
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.Properties.Resources.resources
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.csproj.GenerateResource.cache
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.csproj.CoreCompileInputs.cache
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.csproj.CopyComplete
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.exe
+D:\ucheba\РПМ\Проект 3\Akhmerova41\obj\Debug\Akhmerova41.pdb

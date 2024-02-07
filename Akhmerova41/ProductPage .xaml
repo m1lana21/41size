@@ -14,39 +14,39 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="500"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1150"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-            <Image Width="100" Grid.Column="0" Stretch="UniformToFill" Grid.RowSpan="4">
+            <Image Width="200" Grid.Column="0" Stretch="UniformToFill" Grid.RowSpan="4">
                 <Image.Source>
                     <Binding Path="ProductPhoto">
                         <Binding.TargetNullValue>
                             <ImageSource>
-                                products\picture.png
+                                \product\picture.png
                             </ImageSource>
                         </Binding.TargetNullValue>
                     </Binding>
                 </Image.Source>
             </Image>
             <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0"></TextBlock>
-            <TextBlock Text="{Binding ProductProductDescription}" Grid.Column="1" Grid.Row="1"></TextBlock>
+            <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1"></TextBlock>
             <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2"></TextBlock>
             
-            <StackPanel Grid.Column="1" Grid.Row="3">
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
                 <TextBlock Text="{Binding ProductCost}"></TextBlock>
                 <TextBlock Text=" рублей"></TextBlock>
             </StackPanel>
                 <TextBlock  Grid.Column="2" Grid.Row="0" Text="Скидка"></TextBlock>
-            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
-                <TextBlock Grid.Row="2" Grid.RowSpan="3" Text="{Binding ProductDiscountAmount}" FontSize="50"></TextBlock>
-                <TextBlock Grid.Row="2" Grid.RowSpan="3" Text="%" FontSize="50"></TextBlock>
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Margin="10">
+                <TextBlock Grid.Row="0" Grid.RowSpan="3" Text="{Binding ProductDiscountAmount}" FontSize="50"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.RowSpan="3" Text="%" FontSize="50"></TextBlock>
             </StackPanel>
             
             

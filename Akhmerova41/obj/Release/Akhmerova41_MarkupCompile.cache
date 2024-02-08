@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\obj\Debug\
+D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\obj\Release\
 Akhmerova41
 none
 false
-DEBUG;TRACE
+TRACE
 D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\App.xaml
 3-1757686098
 111934444876
@@ -16,5 +16,5 @@ D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\App.xaml
 191593618478
 AddEditPage.xaml;MainWindow.xaml;ProductPage .xaml;
 
-False
+True
 

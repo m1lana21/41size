@@ -25,11 +25,71 @@ namespace Akhmerova41
             InitializeComponent();
             var currentProducts = Akhmerova41Entities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentProducts;
+            DiscountComboBox.SelectedIndex = 0;
+            UpdateProductPage();
+        }
+
+        private void UpdateProductPage()
+        {
+            var currentProducts = Akhmerova41Entities.GetContext().Product.ToList();
+
+            //поиск
+            currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(SearchTextBox.Text.ToLower())).ToList();
+
+            //сортировка
+            if (RadioButtonUp.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.ProductCost).ToList();
+            }
+            if (RadioButtonDown.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
+            }
+
+            //фильтрация
+            if (DiscountComboBox.SelectedIndex == 2)
+            {
+                currentProducts = currentProducts.ToList();
+            }
+            if (DiscountComboBox.SelectedIndex == 1)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 0 && p.ProductDiscountAmount <=9.99)).ToList();
+            }
+            if (DiscountComboBox.SelectedIndex == 2)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount <= 14.99)).ToList();
+            }
+            if (DiscountComboBox.SelectedIndex == 3)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 15)).ToList();
+            }
+
+            ProductListView.ItemsSource = currentProducts;
         }
 
         private void ButtonGo_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new AddEditPage());
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProductPage();
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProductPage();
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            UpdateProductPage();
+        }
+
+        private void DiscountComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProductPage();
         }
     }
 }

@@ -8,22 +8,30 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductPage" FontFamily="Comic Sans MS">
 
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="15" Height="20" Name="ProductCountTextBlock"></TextBlock>
+                <TextBlock FontSize="15" Height="20" Text=" из "></TextBlock>
+                <TextBlock FontSize="15" Height="20" Name="ProductMaxCountTextBlock"></TextBlock>
+            </StackPanel>
+
             <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Left">
                 <TextBlock Text="Введите название для поиска" FontSize="15" TextAlignment="Right"></TextBlock>
                 <TextBox x:Name="SearchTextBox" Width="210" FontSize="15" TextChanged="SearchTextBox_TextChanged">
                 </TextBox>
             </StackPanel>
+            
             <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Left">
                 <RadioButton Content="стоимость по возрастанию" FontSize="15" Checked="RadioButton_Checked" GroupName="Cost" Name="RadioButtonUp"></RadioButton>
                 <RadioButton Content="стоимость по убыванию" FontSize="15" Checked="RadioButton_Checked_1"  GroupName="Cost" Name="RadioButtonDown"></RadioButton>
             </StackPanel>
+
             <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Right">
                 <TextBlock Text="Фильтрация по скидке" FontSize="15"></TextBlock>
                 <ComboBox Name="DiscountComboBox" Width="160" FontSize="15" SelectionChanged="DiscountComboBox_SelectionChanged">
@@ -60,15 +68,15 @@
                     </Binding>
                 </Image.Source>
             </Image>
-            <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0"></TextBlock>
-            <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1"></TextBlock>
-            <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2"></TextBlock>
+            <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0" FontSize="15"></TextBlock>
+            <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1" FontSize="15"></TextBlock>
+            <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2" FontSize="15"></TextBlock>
             
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-                <TextBlock Text="{Binding ProductCost}"></TextBlock>
-                <TextBlock Text=" рублей"></TextBlock>
+                <TextBlock Text="{Binding ProductCost}" FontSize="15"></TextBlock>
+                <TextBlock Text=" рублей" FontSize="15"></TextBlock>
             </StackPanel>
-                <TextBlock  Grid.Column="2" Grid.Row="0" Text="Скидка"></TextBlock>
+                <TextBlock  Grid.Column="2" Grid.Row="0" Text="Скидка" FontSize="15"></TextBlock>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Margin="10">
                 <TextBlock Grid.Row="0" Grid.RowSpan="3" Text="{Binding ProductDiscountAmount}" FontSize="50"></TextBlock>
                 <TextBlock Grid.Row="0" Grid.RowSpan="3" Text="%" FontSize="50"></TextBlock>

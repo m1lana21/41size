@@ -27,6 +27,12 @@ namespace Akhmerova41
             ProductListView.ItemsSource = currentProducts;
             DiscountComboBox.SelectedIndex = 0;
             UpdateProductPage();
+            int ProductMaxCount = 0;
+            foreach (Product product in currentProducts)
+            {
+                ProductMaxCount++;
+            }
+            ProductMaxCountTextBlock.Text = ProductMaxCount.ToString();
         }
 
         private void UpdateProductPage()
@@ -65,6 +71,13 @@ namespace Akhmerova41
             }
 
             ProductListView.ItemsSource = currentProducts;
+
+            int ProductCount = 0;
+            foreach (Product product in currentProducts)
+            {
+                ProductCount++;
+            }
+            ProductCountTextBlock.Text = ProductCount.ToString();
         }
 
         private void ButtonGo_Click(object sender, RoutedEventArgs e)
@@ -90,6 +103,16 @@ namespace Akhmerova41
         private void DiscountComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateProductPage();
+        }
+
+        private void RadioButtonDown_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButtonCancel_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

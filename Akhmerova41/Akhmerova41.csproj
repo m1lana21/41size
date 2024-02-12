@@ -70,6 +70,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AkhmerovaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AuthorizationPage.xaml.cs">
+      <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>AkhmerovaModel.tt</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>AkhmerovaModel.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

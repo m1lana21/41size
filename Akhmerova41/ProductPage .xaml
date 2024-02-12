@@ -15,6 +15,19 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Stretch">
+                    <TextBlock Text="Вы авторизованы как " FontSize="15" Height="20"></TextBlock>
+                    <TextBlock x:Name="NameTextBlock" FontSize="15" Height="20"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Stretch">
+                    <TextBlock Text="Роль: " FontSize="15" Height="20"></TextBlock>
+                    <TextBlock x:Name="RoleTextBlock" FontSize="15" Height="20"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            
+
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Stretch">
                 <TextBlock FontSize="15" Height="20" Name="ProductCountTextBlock"></TextBlock>
                 <TextBlock FontSize="15" Height="20" Text=" из "></TextBlock>

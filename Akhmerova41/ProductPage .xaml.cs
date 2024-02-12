@@ -20,7 +20,7 @@ namespace Akhmerova41
     /// </summary>
     public partial class ProductPage : Page
     {
-        public ProductPage()
+        public ProductPage(User user)
         {
             InitializeComponent();
             var currentProducts = Akhmerova41Entities.GetContext().Product.ToList();
@@ -33,6 +33,25 @@ namespace Akhmerova41
                 ProductMaxCount++;
             }
             ProductMaxCountTextBlock.Text = ProductMaxCount.ToString();
+            if (user == null)
+            {
+                NameTextBlock.Text = "Гость";
+                RoleTextBlock.Text = "Гость";
+            }
+               
+            else
+            {
+                NameTextBlock.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+
+                switch (user.UserRole)
+                {
+                    case 1: RoleTextBlock.Text = "Администратор"; break;
+                    case 2: RoleTextBlock.Text = "Клиент"; break;
+                    case 3: RoleTextBlock.Text = "Менеджер"; break;
+                }
+            }
+            
+
         }
 
         private void UpdateProductPage()

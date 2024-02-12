@@ -23,7 +23,7 @@ namespace Akhmerova41
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductPage());
+            MainFrame.Navigate(new AuthorizationPage());
             Manager.MainFrame = MainFrame;
         }
 

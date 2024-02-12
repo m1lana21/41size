@@ -106,3 +106,5 @@ D:\ucheba\РПМ\18\Проект\Akhmerova41\obj\Debug\Akhmerova41.csproj.CoreCo
 D:\ucheba\РПМ\18\Проект\Akhmerova41\obj\Debug\Akhmerova41.csproj.CopyComplete
 D:\ucheba\РПМ\18\Проект\Akhmerova41\obj\Debug\Akhmerova41.exe
 D:\ucheba\РПМ\18\Проект\Akhmerova41\obj\Debug\Akhmerova41.pdb
+D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\obj\Debug\AuthorizationPage.g.cs
+D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\obj\Debug\AuthorizationPage.baml

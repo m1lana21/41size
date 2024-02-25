@@ -133,5 +133,22 @@ namespace Akhmerova41
         {
 
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProductListView.SelectedIndex >= 0)
+            {
+                var currentProduct = ProductListView.SelectedItem as Product;
+
+
+                var newOrderProduct = new OrderProduct();
+                newOrderProduct.OrderID = newOrderID;
+            }
+        }
+
+        private void ProductListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

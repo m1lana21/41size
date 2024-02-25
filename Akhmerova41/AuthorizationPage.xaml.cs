@@ -18,9 +18,6 @@ using System.Windows.Threading;
 
 namespace Akhmerova41
 {
-    /// <summary>
-    /// Логика взаимодействия для AuthorizationPage.xaml
-    /// </summary>
     public partial class AuthorizationPage : Page
     {
         

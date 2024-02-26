@@ -139,3 +139,5 @@ D:\ucheba\РПМ\20\Akhmerova41\obj\Debug\Akhmerova41.csproj.CoreCompileInputs.c
 D:\ucheba\РПМ\20\Akhmerova41\obj\Debug\Akhmerova41.csproj.CopyComplete
 D:\ucheba\РПМ\20\Akhmerova41\obj\Debug\Akhmerova41.exe
 D:\ucheba\РПМ\20\Akhmerova41\obj\Debug\Akhmerova41.pdb
+D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\obj\Debug\OrderWindow.g.cs
+D:\3 Курс\ИСП-31\Ахмерова\проект\Akhmerova41\obj\Debug\OrderWindow.baml

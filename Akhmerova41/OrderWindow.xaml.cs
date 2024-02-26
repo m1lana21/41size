@@ -20,10 +20,61 @@ namespace Akhmerova41
         List<Product> selectedProducts = new List<Product>();
         private Order currentOrder = new Order();
         private OrderProduct currentOrderProduct = new OrderProduct(); 
-        public OrderWindow()
+        public OrderWindow(List<OrderProduct> selectedOrderProducts, List<Product> selectedProducts, string FIO)
         {
             InitializeComponent();
+            
             var currentPickups = Akhmerova41Entities.GetContext().OrderPickupPoint.ToList();
+            PickupCombo.ItemsSource = currentPickups;
+            ClientNAme.Text = FIO;
+            OrderIDTextBox.Text = selectedOrderProducts.First().OrderID.ToString();
+            OrderListView.ItemsSource = selectedProducts;
+            foreach (Product p in selectedProducts)
+            {
+                p.ProductQuantityInStock = 1;
+                foreach (OrderProduct q in selectedOrderProducts) 
+                {
+                    if (p.ProductArticleNumber == q.ProductArticleNumber)
+                        p.ProductQuantityInStock = q.Amount;
+                }
+            }
+
+            this.selectedOrderProducts = selectedOrderProducts;
+            this.selectedProducts = selectedProducts;
+            OrderDate.Text = DateTime.Now.ToString();
+            //SetDeliveryDate();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            var newOrderID = Akhmerova41Entities.GetContext().Order.Select(p => p.OrderID).Max()+1;
+        }
+
+        private void PlusButton_Click(object sender, RoutedEventArgs e)
+        {
+            var prod = (sender as Button).DataContext as Product;
+            prod.ProductQuantityInStock++;
+            var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
+            int index = selectedOrderProducts.IndexOf(selectedOP);
+            selectedOrderProducts[index].Amount++;
+            //SetDeliveryDate;
+            
+            OrderListView.Items.Refresh();
+        
+        }
+
+        private void MinusButton_Click(object sender, RoutedEventArgs e)
+        {
+            var prod = (sender as Button).DataContext as Product;
+            if (prod.ProductQuantityInStock > 1)
+            {
+                prod.ProductQuantityInStock--;
+                var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
+                int index = selectedOrderProducts.IndexOf(selectedOP);
+                selectedOrderProducts[index].Amount--;
+                //SetDeliveryDate;
+                OrderListView.Items.Refresh();
+            }
             
         }
     }

@@ -5,8 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Akhmerova41"
         mc:Ignorable="d"
-        Title="OrderWindow" Height="450" Width="800">
+        Title="OrderWindow" Height="450" Width="800" FontFamily="Comic Sans MS">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="750"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1500"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Дата формирования заказа" FontSize="20" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Дата доставки заказа" FontSize="20" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="ФИО клиента" FontSize="20" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Номер заказа" FontSize="20" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Пункт выдачи" FontSize="20" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"></TextBlock>
+        <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+
+        <TextBlock x:Name="OrderDate" Grid.Row="0" Grid.Column="1" Text="{Binding OrderDate}" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBox x:Name="OrderDeliveryDateTB" Grid.Row="1" Grid.Column="1" Text="{Binding OrderDeliveryDate}"></TextBox>
+        <TextBox x:Name="ClientNAme" Grid.Row="2" Grid.Column="1" FontSize="20"></TextBox>
+        <TextBox x:Name="OrderIDTextBox" Grid.Row="3" Grid.Column="1" FontSize="20"></TextBox>
+        <ComboBox Name="PickupCombo" Width="390" Grid.Column="1" Grid.Row="5" FontSize="20">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding OrderPickupPointIndex}" FontSize="20"></Label>
+                        <Label Content="{Binding OrderPickupPointCity}" FontSize="20"></Label>
+                        <Label Content="{Binding OrderPickupPointStreet}" FontSize="20"></Label>
+                        <Label Content="{Binding OrderPickupPointHouse}" FontSize="20"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ListView x:Name="OrderListView" Grid.Row="4" Grid.Column="1">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1000"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Width="300" Grid.Column="0" Stretch="UniformToFill" Grid.RowSpan="4">
+                            <Image.Source>
+                                <Binding Path="ProductPhoto">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>
+                                            product\picture.png
+                                        </ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0" FontSize="15"></TextBlock>
+                        <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1" FontSize="15"></TextBlock>
+                        <TextBlock Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2" FontSize="15"></TextBlock>
+                        <StackPanel Grid.Column="2" Grid.Row="3" Orientation="Horizontal">
+                            <Button x:Name="MinusButton" Content="-" Width="30" Click="MinusButton_Click"></Button>
+                            <TextBlock Name="TBAmount" Text="{Binding ProductQuantityInStock}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            <Button x:Name="PlusButton" Content="+" Width="30" Click="PlusButton_Click"></Button>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                            <TextBlock Text="{Binding ProductCost}" FontSize="15"></TextBlock>
+                            <TextBlock Text=" рублей" FontSize="15"></TextBlock>
+                        </StackPanel>
+                        <TextBlock  Grid.Column="2" Grid.Row="0" Text="Скидка" FontSize="15"></TextBlock>
+                        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Margin="10">
+                            <TextBlock Grid.Row="0" Grid.RowSpan="3" Text="{Binding ProductDiscountAmount}" FontSize="50"></TextBlock>
+                            <TextBlock Grid.Row="0" Grid.RowSpan="3" Text="%" FontSize="50"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

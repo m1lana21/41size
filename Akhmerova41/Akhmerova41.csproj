@@ -65,10 +65,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AkhmerovaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AkhmerovaModel.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="AkhmerovaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AkhmerovaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AkhmerovaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AkhmerovaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
@@ -108,16 +118,6 @@
     </Page>
     <Compile Include="AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AkhmerovaModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AkhmerovaModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AkhmerovaModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AkhmerovaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -187,6 +187,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="product\1573393910581.jpg" />
+    <Content Include="AkhmerovaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AkhmerovaModel.edmx</DependentUpon>
+      <LastGenOutput>AkhmerovaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AkhmerovaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AkhmerovaModel.edmx</DependentUpon>
+      <LastGenOutput>AkhmerovaModel.cs</LastGenOutput>
+    </Content>
     <Content Include="product\D329H3.png" />
     <Content Include="product\D572U8.png" />
     <Content Include="product\F572H7.png" />
@@ -199,18 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="product\picture.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AkhmerovaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AkhmerovaModel.Context.cs</LastGenOutput>
-      <DependentUpon>AkhmerovaModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="AkhmerovaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AkhmerovaModel.edmx</DependentUpon>
-      <LastGenOutput>AkhmerovaModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -134,21 +134,50 @@ namespace Akhmerova41
 
         }
 
+            List<Product> selectedProducts = new List<Product>();
+            List<OrderProduct> selectedOrderProducts = new List<OrderProduct>();
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             if (ProductListView.SelectedIndex >= 0)
             {
-                var currentProduct = ProductListView.SelectedItem as Product;
-
-
+                var prod = ProductListView.SelectedItem as Product;
+                selectedProducts.Add(prod);
+                //List<OrderProduct> selectedOrderProducts = ;
                 var newOrderProduct = new OrderProduct();
-                newOrderProduct.OrderID = newOrderID;
+                newOrderProduct.ProductArticleNumber = prod.ProductArticleNumber;
+                newOrderProduct.Amount = 1;
+                var selOP = selectedOrderProducts.Where(p => Equals(p.ProductArticleNumber, prod.ProductArticleNumber));
+                if (selOP.Count() == 0)
+                {
+                    selectedOrderProducts.Add(newOrderProduct);
+                }
+                else
+                {
+                    foreach(OrderProduct p in selectedOrderProducts)
+                    {
+                        if (p.ProductArticleNumber == prod.ProductArticleNumber)
+                            p.Amount++;
+                    }
+                }
+                OrderButton.Visibility = Visibility.Visible;
+                ProductListView.SelectedIndex = -1;
+
+            
             }
         }
 
         private void ProductListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            string FIO = NameTextBlock.Text;
+            selectedProducts = selectedProducts.Distinct().ToList();
+            OrderWindow orderWindow = new OrderWindow(selectedOrderProducts, selectedProducts, FIO);
+            orderWindow.ShowDialog();
         }
     }
 }

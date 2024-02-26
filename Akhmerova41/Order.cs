@@ -24,13 +24,13 @@ namespace Akhmerova41
         public Nullable<System.DateTime> OrderDate { get; set; }
         public System.DateTime OrderDeliveryDate { get; set; }
         public int OrderPickupPoint { get; set; }
-        public string OrderClientSurname { get; set; }
-        public string OrderClientName { get; set; }
-        public string OrderClientPatronymic { get; set; }
         public string OrderReceiveCode { get; set; }
         public string OrderStatus { get; set; }
+        public Nullable<int> ClientID { get; set; }
+
     
         public virtual OrderPickupPoint OrderPickupPoint1 { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }

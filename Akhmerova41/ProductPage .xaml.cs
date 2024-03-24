@@ -23,6 +23,7 @@ namespace Akhmerova41
         public ProductPage(User user)
         {
             InitializeComponent();
+            OrderButton.Visibility = Visibility.Hidden;
             var currentProducts = Akhmerova41Entities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentProducts;
             DiscountComboBox.SelectedIndex = 0;
@@ -164,6 +165,7 @@ namespace Akhmerova41
 
             
             }
+            
         }
 
         private void ProductListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

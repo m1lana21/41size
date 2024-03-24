@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|d:\\ucheba\\\u0440\u043F\u043C\\20\\akhmerova41\\orderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|solutionrelative:orderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\orderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|solutionrelative:orderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\productpage .xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|solutionrelative:productpage .xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderWindow.xaml.cs",
+              "DocumentMoniker": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml.cs",
+              "RelativeDocumentMoniker": "OrderWindow.xaml.cs",
+              "ToolTip": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml.cs",
+              "RelativeToolTip": "OrderWindow.xaml.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAEYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T15:55:24.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductPage .xaml.cs",
+              "DocumentMoniker": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\ProductPage .xaml.cs",
+              "RelativeDocumentMoniker": "ProductPage .xaml.cs",
+              "ToolTip": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\ProductPage .xaml.cs",
+              "RelativeToolTip": "ProductPage .xaml.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAAAJcAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T19:02:31.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderWindow.xaml",
+              "DocumentMoniker": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml",
+              "RelativeDocumentMoniker": "OrderWindow.xaml",
+              "ToolTip": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml",
+              "RelativeToolTip": "OrderWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-24T17:42:41.318Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

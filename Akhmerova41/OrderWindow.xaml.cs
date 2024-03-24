@@ -23,10 +23,9 @@ namespace Akhmerova41
         public OrderWindow(List<OrderProduct> selectedOrderProducts, List<Product> selectedProducts, string FIO)
         {
             InitializeComponent();
-            
             var currentPickups = Akhmerova41Entities.GetContext().OrderPickupPoint.ToList();
             PickupCombo.ItemsSource = currentPickups;
-            ClientNAme.Text = FIO;
+            ClientName.Text = FIO;
             OrderIDTextBox.Text = selectedOrderProducts.First().OrderID.ToString();
             OrderListView.ItemsSource = selectedProducts;
             foreach (Product p in selectedProducts)
@@ -41,13 +40,14 @@ namespace Akhmerova41
 
             this.selectedOrderProducts = selectedOrderProducts;
             this.selectedProducts = selectedProducts;
-            OrderDate.Text = DateTime.Now.ToString();
-            //SetDeliveryDate();
+            OrderDate.Text = DateTime.Now.ToShortDateString();
+            SetDeliveryDate();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             var newOrderID = Akhmerova41Entities.GetContext().Order.Select(p => p.OrderID).Max()+1;
+            
         }
 
         private void PlusButton_Click(object sender, RoutedEventArgs e)
@@ -57,7 +57,7 @@ namespace Akhmerova41
             var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
             int index = selectedOrderProducts.IndexOf(selectedOP);
             selectedOrderProducts[index].Amount++;
-            //SetDeliveryDate;
+            SetDeliveryDate();
             
             OrderListView.Items.Refresh();
         
@@ -66,16 +66,37 @@ namespace Akhmerova41
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
             var prod = (sender as Button).DataContext as Product;
-            if (prod.ProductQuantityInStock > 1)
+            if (prod.ProductQuantityInStock > 0)
             {
                 prod.ProductQuantityInStock--;
                 var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
                 int index = selectedOrderProducts.IndexOf(selectedOP);
                 selectedOrderProducts[index].Amount--;
-                //SetDeliveryDate;
+                SetDeliveryDate();
                 OrderListView.Items.Refresh();
             }
-            
+        }
+
+        private void OrderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SetDeliveryDate()
+        {
+            bool ifLessThanOnStock = false;
+            DateTime deliveryDate = DateTime.Now;
+            var currentProductQuantity = Akhmerova41Entities.GetContext().Product.ToList();
+            foreach(var item in selectedProducts)
+            {
+                foreach (var item1 in selectedOrderProducts)
+                {
+                    if(item1.Amount>item.ProductQuantityInStock || item.ProductQuantityInStock < 3)
+                    {
+                        ifLessThanOnStock = true;
+                    }
+                }
+            }
         }
     }
 }

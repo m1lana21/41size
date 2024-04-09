@@ -20,5 +20,19 @@ namespace Akhmerova41
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+        public double Price
+        {
+            
+            get
+            {
+                double Price = Decimal.ToDouble(Product.ProductCost);
+                double Discount = (double)Product.ProductDiscountAmount;
+                if (Discount == 0)
+                {
+                    return Price;
+                }
+                else return Price-(Price/100*Discount);
+            }
+        }
     }
 }

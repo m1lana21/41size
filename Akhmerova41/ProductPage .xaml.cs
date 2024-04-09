@@ -20,6 +20,7 @@ namespace Akhmerova41
     /// </summary>
     public partial class ProductPage : Page
     {
+        private User _user = null;
         public ProductPage(User user)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace Akhmerova41
             ProductListView.ItemsSource = currentProducts;
             DiscountComboBox.SelectedIndex = 0;
             UpdateProductPage();
+            _user = user;
             int ProductMaxCount = 0;
             foreach (Product product in currentProducts)
             {
@@ -54,6 +56,7 @@ namespace Akhmerova41
             
 
         }
+        
 
         private void UpdateProductPage()
         {
@@ -135,36 +138,23 @@ namespace Akhmerova41
 
         }
 
-            List<Product> selectedProducts = new List<Product>();
-            List<OrderProduct> selectedOrderProducts = new List<OrderProduct>();
+        List<OrderProduct> _orderProducts = new List<OrderProduct>();
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductListView.SelectedIndex >= 0)
+            foreach(Product item in ProductListView.SelectedItems)
             {
-                var prod = ProductListView.SelectedItem as Product;
-                selectedProducts.Add(prod);
-                //List<OrderProduct> selectedOrderProducts = ;
-                var newOrderProduct = new OrderProduct();
-                newOrderProduct.ProductArticleNumber = prod.ProductArticleNumber;
-                newOrderProduct.Amount = 1;
-                var selOP = selectedOrderProducts.Where(p => Equals(p.ProductArticleNumber, prod.ProductArticleNumber));
-                if (selOP.Count() == 0)
+                if(_orderProducts.Any(p=>p.ProductArticleNumber == item.ProductArticleNumber))
                 {
-                    selectedOrderProducts.Add(newOrderProduct);
+                    _orderProducts.Find(p => p.ProductArticleNumber == item.ProductArticleNumber).Amount++;
                 }
                 else
                 {
-                    foreach(OrderProduct p in selectedOrderProducts)
-                    {
-                        if (p.ProductArticleNumber == prod.ProductArticleNumber)
-                            p.Amount++;
-                    }
+                    _orderProducts.Add(new OrderProduct { ProductArticleNumber = item.ProductArticleNumber, Amount = 1, Product = item});
                 }
-                OrderButton.Visibility = Visibility.Visible;
-                ProductListView.SelectedIndex = -1;
-
-            
             }
+            
+            OrderButton.Visibility = Visibility.Visible;
+            ProductListView.SelectedIndex = -1;
             
         }
 
@@ -175,10 +165,8 @@ namespace Akhmerova41
 
         private void OrderButton_Click(object sender, RoutedEventArgs e)
         {
-
-            string FIO = NameTextBlock.Text;
-            selectedProducts = selectedProducts.Distinct().ToList();
-            OrderWindow orderWindow = new OrderWindow(selectedOrderProducts, selectedProducts, FIO);
+            
+            OrderWindow orderWindow = new OrderWindow(_orderProducts, _user);
             orderWindow.ShowDialog();
         }
     }

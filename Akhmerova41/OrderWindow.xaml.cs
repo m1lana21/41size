@@ -16,86 +16,106 @@ namespace Akhmerova41
 {
     public partial class OrderWindow : Window
     {
-        List<OrderProduct> selectedOrderProducts = new List<OrderProduct>();
+        private List<OrderProduct> _orderList = new List<OrderProduct>();
         List<Product> selectedProducts = new List<Product>();
-        private Order currentOrder = new Order();
-        private OrderProduct currentOrderProduct = new OrderProduct(); 
-        public OrderWindow(List<OrderProduct> selectedOrderProducts, List<Product> selectedProducts, string FIO)
+        User _user = null;
+        private int orderNumber = -1;
+        public OrderWindow(List<OrderProduct> orderList, User user)
         {
             InitializeComponent();
-            var currentPickups = Akhmerova41Entities.GetContext().OrderPickupPoint.ToList();
-            PickupCombo.ItemsSource = currentPickups;
-            ClientName.Text = FIO;
-            OrderIDTextBox.Text = selectedOrderProducts.First().OrderID.ToString();
-            OrderListView.ItemsSource = selectedProducts;
-            foreach (Product p in selectedProducts)
-            {
-                p.ProductQuantityInStock = 1;
-                foreach (OrderProduct q in selectedOrderProducts) 
-                {
-                    if (p.ProductArticleNumber == q.ProductArticleNumber)
-                        p.ProductQuantityInStock = q.Amount;
-                }
-            }
+            _orderList = orderList;
+            _user = user;
+            //if (user == null) ClientName.Text = "Гость";
+            //else ClientName.Text = _user.UserSurname + " " + _user.UserName + " " + _user.UserPatronymic;
 
-            this.selectedOrderProducts = selectedOrderProducts;
-            this.selectedProducts = selectedProducts;
-            OrderDate.Text = DateTime.Now.ToShortDateString();
-            SetDeliveryDate();
+
+            if (_user == null)
+            {
+                ClientName.Text = "Гость";
+            }
+            else ClientName.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+
+
+            OrderListView.ItemsSource = _orderList;
+            
+            orderNumber = Akhmerova41Entities.GetContext().Order.ToList().Select(p => p.OrderID).Max() + 1;
+            OrderIDTextBox.Text = orderNumber.ToString();
+            PickupCombo.ItemsSource = Akhmerova41Entities.GetContext().OrderPickupPoint.ToList();
+            OrderDate.SelectedDate = DateTime.Now;
+            UpdateDeliveryDate();
+
+
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateDeliveryDate()
         {
-            var newOrderID = Akhmerova41Entities.GetContext().Order.Select(p => p.OrderID).Max()+1;
-            
+            if(_orderList.Any(p=>p.Product.ProductQuantityInStock<3) ||
+                _orderList.Any(p => p.Amount > p.Product.ProductQuantityInStock))
+            {
+                OrderDeliveryDateTB.SelectedDate = OrderDate.SelectedDate.Value + TimeSpan.FromDays(6);
+            }
+            else
+            {
+                OrderDeliveryDateTB.SelectedDate = OrderDate.SelectedDate.Value + TimeSpan.FromDays(3);
+            }
+            double total = 0;
+            foreach(var item in _orderList)
+            {
+                total+= item.Price;
+            }
+            PriceButton.Text = total.ToString();
         }
 
         private void PlusButton_Click(object sender, RoutedEventArgs e)
         {
-            var prod = (sender as Button).DataContext as Product;
-            prod.ProductQuantityInStock++;
-            var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
-            int index = selectedOrderProducts.IndexOf(selectedOP);
-            selectedOrderProducts[index].Amount++;
-            SetDeliveryDate();
-            
+            _orderList.Find(p => p.ProductArticleNumber == ((sender as Button).DataContext as OrderProduct).ProductArticleNumber).Amount++;
             OrderListView.Items.Refresh();
-        
+            UpdateDeliveryDate();
         }
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            var prod = (sender as Button).DataContext as Product;
-            if (prod.ProductQuantityInStock > 0)
+            var prod = (sender as Button).DataContext as OrderProduct;
+            if (--_orderList.Find(p => p.ProductArticleNumber == prod.ProductArticleNumber).Amount <= 0)
             {
-                prod.ProductQuantityInStock--;
-                var selectedOP = selectedOrderProducts.FirstOrDefault(p => p.ProductArticleNumber == prod.ProductArticleNumber);
-                int index = selectedOrderProducts.IndexOf(selectedOP);
-                selectedOrderProducts[index].Amount--;
-                SetDeliveryDate();
-                OrderListView.Items.Refresh();
+                _orderList.RemoveAll(p => p.ProductArticleNumber == prod.ProductArticleNumber);
             }
+            else prod.Amount--;
+            OrderListView.Items.Refresh();
+            UpdateDeliveryDate();
+
         }
 
-        private void OrderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void SetDeliveryDate()
-        {
-            bool ifLessThanOnStock = false;
-            DateTime deliveryDate = DateTime.Now;
-            var currentProductQuantity = Akhmerova41Entities.GetContext().Product.ToList();
-            foreach(var item in selectedProducts)
+            if(OrderDeliveryDateTB.SelectedDate==null || OrderDate.SelectedDate == null)
             {
-                foreach (var item1 in selectedOrderProducts)
-                {
-                    if(item1.Amount>item.ProductQuantityInStock || item.ProductQuantityInStock < 3)
-                    {
-                        ifLessThanOnStock = true;
-                    }
-                }
+                MessageBox.Show("Неверная дата доставки или заказа");
+                return;
+            }
+            var order = new Order
+            {
+                User = _user,
+                OrderReceiveCode = new Random().Next(100, 999).ToString(),
+                OrderID = orderNumber,
+                OrderPickupPoint = (PickupCombo.SelectedItem as OrderPickupPoint).OrderPickupPointID,
+                OrderStatus = "Новый",
+                OrderProduct = _orderList,
+                OrderDate = OrderDate.SelectedDate.Value,
+            };
+            _orderList.ForEach(p => p.OrderID = orderNumber);
+            Akhmerova41Entities.GetContext().OrderProduct.Concat(_orderList);
+            Akhmerova41Entities.GetContext().Order.Add(order);
+            try
+            {
+                Akhmerova41Entities.GetContext().SaveChanges();
+                MessageBox.Show(String.Format("Заказ сохранен, код получения - {0}",order.OrderReceiveCode));
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return;
             }
         }
     }

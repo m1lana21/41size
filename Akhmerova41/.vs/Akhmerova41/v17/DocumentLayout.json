@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|d:\\ucheba\\\u0440\u043F\u043C\\20\\akhmerova41\\orderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|solutionrelative:orderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\orderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|solutionrelative:orderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|d:\\ucheba\\\u0440\u043F\u043C\\20\\akhmerova41\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C179D662-D121-4553-80A1-6132114A8972}|Akhmerova41.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -21,6 +34,14 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
@@ -28,8 +49,42 @@
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAHAQAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-14T17:39:16.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderWindow.xaml",
+              "DocumentMoniker": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml",
+              "RelativeDocumentMoniker": "OrderWindow.xaml",
+              "ToolTip": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml",
+              "RelativeToolTip": "OrderWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T17:36:23.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderWindow.xaml.cs",
+              "DocumentMoniker": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml.cs",
+              "RelativeDocumentMoniker": "OrderWindow.xaml.cs",
+              "ToolTip": "D:\\ucheba\\\u0420\u041F\u041C\\20\\Akhmerova41\\OrderWindow.xaml.cs",
+              "RelativeToolTip": "OrderWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T17:36:01.585Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -61,7 +61,7 @@ namespace Akhmerova41
             double total = 0;
             foreach(var item in _orderList)
             {
-                total+= item.Price;
+                total+= item.Price * item.Amount;
             }
             PriceButton.Text = total.ToString();
         }

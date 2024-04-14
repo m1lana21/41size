@@ -75,8 +75,7 @@
                             </Image.Source>
                         </Image>
                         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
-                            <TextBlock Text="{Binding Product.ProductName}" FontSize="15">
-                            </TextBlock>
+                            <TextBlock Text="{Binding Product.ProductName}" FontSize="15"></TextBlock>
                             <TextBlock Text="{Binding Product.ProductDescription}" FontSize="15"></TextBlock>
                             <TextBlock Text="{Binding Product.ProductManufacturer}" FontSize="15"></TextBlock>
                             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
@@ -100,6 +99,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
     </Grid>
 </Window>
